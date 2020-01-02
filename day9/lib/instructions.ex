@@ -1,6 +1,5 @@
 defmodule Instructions do
 
-
   @instructions %{
     1 => %Instruction{
       opcode: 1,
@@ -54,7 +53,7 @@ defmodule Instructions do
     }
   }
 
-  def opcode(instr, 1) do
+  def opcode(instr) do
     flags = rem(instr, 100)
   end
 
