@@ -1,6 +1,6 @@
 
 defmodule Memory do
-  defmodule VM do
+  defmodule Memory do
     defstruct program: %{},
               ip: 0,
               rb: 0,
