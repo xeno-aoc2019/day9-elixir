@@ -29,7 +29,12 @@ defmodule Memory do
   end
 
   def get(memory, index) do
-    memory.program[index]
+    value = memory.program[index]
+    if value == nil do
+      0
+    else
+      value
+    end
   end
 
   def halt(memory) do
