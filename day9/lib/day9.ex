@@ -40,6 +40,15 @@ defmodule Day9 do
     processed
   end
 
+  def real_task2 do
+    mem = run("input.txt", [2])
+    processed = Cpu.exec(mem)
+    [head | tail] = processed.output
+    IO.puts("Output: " <> Integer.to_string(head))
+    processed
+  end
+
+
   def real5 do
     mem = run("input5.txt", [8])
     processed = Cpu.exec(mem)
