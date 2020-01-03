@@ -55,7 +55,7 @@ defmodule Instructions do
 
   def opcode(instr) do
     IO.puts(instr)
-    flags = rem(instr, 100)
+    rem(instr, 100)
   end
 
   def mode(instr, 1) do

@@ -6,4 +6,6 @@ defmodule CpuTest do
 #    assert Instruction.mode(1204, 3) == 0
 #  end
 
+
+
 end

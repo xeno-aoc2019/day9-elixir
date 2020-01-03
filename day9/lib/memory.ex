@@ -24,12 +24,7 @@ defmodule Memory do
   def set(memory, index, value) do
     %{
       memory |
-      program: %{
-        program: %{
-          memory.program |
-          index => value
-        }
-      }
+      program: Map.put(memory.program, index, value)
     }
   end
 

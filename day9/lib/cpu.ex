@@ -2,15 +2,15 @@ defmodule Cpu do
   @moduledoc false
 
   defp read(memory, param, 0) do
-    memory.get(param)
+    Memory.get(memory, param)
   end
 
-  defp read(memory, param, 1) do
+  defp read(_memory, param, 1) do
     param
   end
 
   defp read(memory, param, 2) do
-    memory.get(memory.rb + param)
+    Memory.get(memory, memory.rb + param)
   end
 
   defp write(memory, param, value, 0) do
@@ -44,7 +44,7 @@ defmodule Cpu do
   defp exec_inst(memory, 4, instr) do
     value = read(memory, Memory.get_param(memory, 1), Instructions.mode(instr, 1))
     mem = Memory.add_output(memory, value)
-    Memory.step(memory, 2)
+    Memory.step(mem, 2)
   end
 
   defp exec_inst(memory, 5, instr) do
@@ -91,7 +91,7 @@ defmodule Cpu do
 
   defp exec_inst(memory, 9, instr) do
     value1 = read(memory, Memory.get_param(memory, 1), Instructions.mode(instr, 1))
-    mem = Memory.add_rb(value1)
+    mem = Memory.add_rb(memory, value1)
     Memory.step(mem, 2)
   end
 
