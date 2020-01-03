@@ -54,6 +54,7 @@ defmodule Instructions do
   }
 
   def opcode(instr) do
+    IO.puts(instr)
     flags = rem(instr, 100)
   end
 

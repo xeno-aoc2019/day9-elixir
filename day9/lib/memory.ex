@@ -25,8 +25,10 @@ defmodule Memory do
     %{
       memory |
       program: %{
-        memory.program |
-        index: value
+        program: %{
+          memory.program |
+          index => value
+        }
       }
     }
   end
